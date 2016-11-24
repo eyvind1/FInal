@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1473696102 source:/home/eyvind/Documentos/Listas/List.cpp
+	"List.h"
+
+1473697216 /home/eyvind/Documentos/Listas/List.h
+
+1473696132 source:/home/eyvind/Documentos/Listas/main.cpp
+	<iostream>
+	"List.h"
+

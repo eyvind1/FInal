@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1473692950 source:/home/eyvind/Documentos/matriz/main.cpp
+	<iostream>
+	<thread>
+	<mutex>
+	<vector>
+	"Matrix.h"
+
+1473692904 /home/eyvind/Documentos/matriz/Matrix.h
+
+1473692958 source:/home/eyvind/Documentos/matriz/Matrix.cpp
+	"Matrix.h"
+	<iostream>
+	<thread>
+	<mutex>
+	<future>
+

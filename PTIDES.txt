@@ -1,0 +1,83 @@
+Basado en el modelo evento discretos de computacion
+Procesamiento de eventos en orden de sello de tiempo
+Determinista bajo condiciones de causalidad simple
+Semántica de punto fijo
+Se puede extender a una forma superdensa
+Limitaciones de tiempo para la interacción con el entorno
+
+
+
+Los componentes de software (actores) son "pegados" por un generador de código en un ejecutable
+Kernel ligero en tiempo real (5KB)
+Los actores son máquinas de estado, cada uno con una cola de eventos y contexto
+Asynchronous delivery: las publicaciones del productor en la cola de eventos
+Framework maneja el intercambio de eventos thread-safe y las colas
+Ejecutar a completar: No hay código de bloqueo
+No hay espera ocupada, semáforo, buzón
+Con derecho preferente
+-> Implementación de una sola pila
+Encapsular cada recurso dentro de un objeto activo dedicado
+El resto de la aplicación comparte el objeto activo dedicado a través de eventos
+Asignación de memoria rápida y determinista
+Piscinas de eventos: bloques de memoria de tamaño fijo
+
+
+
+
+
+Motor de ejecución de dos capas
+Coordinación de eventos (safe-to-process)
+Programación de eventos (priorizar eventos seguros)
+Primero fecha límite Primera fundación
+Fecha límite basada en el trayecto desde el puerto de entrada al actuador
+ El análisis de escalabilidad requiere WCET de componentes de software + modelos de eventos
+La implementación de PTIDES entrega semántica de DE incluso w / o WCET
+ Incluso si los plazos no se cumplen, los eventos son determinados
+ PTIDES repetible incluso si WCET equivocado
+
+
+
+
+
+ Tres casos:
+Suposición del tiempo de procesamiento de eventos cero (prueba de factibilidad)
+ Si P falla, P no cumplirá las restricciones de ningún hardware
+Sin suposición de compartir recursos (un evento se procesa tan pronto como es seguro)
+Si P falla, P puede satisfacer las restricciones de otro hardware
+Compartir recursos (un evento seguro se procesa de acuerdo con un algoritmo de programación)
+Si P falla, P no satisface esta implementación (y el algoritmo
+
+
+
+
+
+Los modelos DE se han utilizado principalmente en el modelado y la simulación del rendimiento:
+Sistemas de hardware (VHDL, Verilog)
+Sistemas de fabricación
+Redes de comunicaciones (OPNET, NS-2)
+Sistemas de transporte
+Bolsa de Valores
+DDE es generalmente para acelerar la simulación, no para implementar sistemas distribuidos en tiempo real.
+PTIDES utiliza DE como un lenguaje de especificación de aplicación que sirve como una base semántica para obtener determinismo en sistemas distribuidos en tiempo real.
+Las aplicaciones se dan como modelos distribuidos de DE.
+Ciertos eventos tienen su modelo de tiempo asignado a tiempo real.
+
+
+
+
+
+
+La cámara dispone de funciones de zoom y de enfoque controladas por ordenador.
+El zoom y el enfoque requieren tiempo para configurar, y la cámara no debe tomar fotografías durante este período.
+El video de cada cámara está sincronizado y estampado en el tiempo
+Todas las vistas de algún momento interesante se pueden reproducir en secuencia
+La frecuencia con la que una cámara toma imágenes también es controlada por la computadora.
+
+
+
+
+
+
+El análisis de dependencia pertinente proporciona un marco formal para analizar las relaciones de causalidad para determinar las restricciones de ordenación mínimas en el procesamiento de eventos.
+Captura la idea de que los eventos sólo necesitan ser procesados ​​en orden de sello de tiempo cuando están causalmente relacionados.
+Puede preservar los comportamientos deterministas especificados en los modelos DE sin pagar la pena de ejecuciones totalmente ordenadas.
