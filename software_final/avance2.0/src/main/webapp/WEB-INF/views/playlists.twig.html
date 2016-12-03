@@ -1,0 +1,46 @@
+{% extends "base.twig.html" %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="/resources/css/theme_song_panel.css">
+
+{% endblock%}
+{% block extra_js %}
+
+{% endblock%}
+
+{% block content %}
+		
+<h1>Playlists</h1>
+
+{% for playlist in playlists %}
+	
+<a href="/playlist/?id={{playlist.id}}">
+	<div class="col-md-2">
+		 <a href="?id={{ playlist.id }}"> 
+	  	 <div class="panel panel-default"> 
+		   	 <div class="panel-heading text-center"><h4>{{ playlist.titulo }} </br>  {{ playlist.fecha_creacion|date('d-m-Y') }}</h4></div> 	
+		   	 <div class="panel-body">
+				{{ playlist.creador.user.nombre }} 				{{ playlist.creador.user.apellido }}
+			
+		     </div>
+		     <div class="panel-body">
+                <img src="/resources/img/songs.png"  class="img-circle img-responsive center-block ">
+             </div>
+             <div class="panel-footer text-center"> 
+             	<span></span>{{playlist.creador.user.nombre}}</span>
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
+                            <span class="glyphicon glyphicon glyphicon-plus" aria-hidden="true"></span> 
+             </div>
+		     
+		   </div>
+		 </a>
+
+	  	</div>
+</a> 
+{% endfor %}
+	
+
+    <!--  <a href="add-song?id={{song.id}}">Modify</a> |<a href="add-song">Add New song</a> | <a href="song">List All</a>-->
+
+
+{% endblock %}

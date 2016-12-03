@@ -1,0 +1,64 @@
+{% extends "base.twig.html" %}
+
+{% block extra_css %}
+
+{% endblock%}
+{% block extra_js %}
+
+{% endblock%}
+
+{% block content %}
+		
+<h1>Artista o Integrantes de Grupo</h1>
+
+{% for person in artist.grupo %}
+	
+
+	<div class="col-md-2">
+	  	 <div class="panel panel-default"> 
+		   	 <div class="panel-heading text-center"><h4>{{ person.nombre }} </br>  {{ person.apellido }}</h4></div> 	
+		   	 <div class="panel-body">
+		        <span  class="glyphicon glyphicon-star center-block "></span>
+		        <span>
+		        	Sexo:
+		        	{% if person.sexo == 'M' %}
+					Masculino
+					{% else %}
+					Femenino
+					{% endif %}
+		        </span>
+		     </div>
+		   </div>
+
+	  	</div>
+	 
+{% endfor %}
+<br><br><br><br><br><br><br><br>
+<h1>Albums del Artista</h1>
+<br>
+{% for album in artist.albums %}
+	
+<a href="/albums/?id={{album.id}}">
+	<div class="col-md-2">
+		<a href="../album/?id={{ album.id }}"> 
+	  	 <div class="panel panel-default"> 
+		   	 <div class="panel-heading text-center"><h4>{{ album.title }} </h4></div> 	
+		   	 <div class="panel-body">
+		        <span  class="glyphicon glyphicon-star center-block "></span>
+		        <span>
+		        	{{album.created | date('d-m-Y')}}
+		        </span>
+		     </div>
+		   </div>
+		  </a>
+
+	  	</div>
+	</a>
+{% endfor %}
+
+	
+
+    <!--  <a href="add-song?id={{song.id}}">Modify</a> |<a href="add-song">Add New song</a> | <a href="song">List All</a>-->
+
+
+{% endblock %}

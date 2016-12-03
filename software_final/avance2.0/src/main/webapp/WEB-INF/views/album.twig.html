@@ -1,0 +1,50 @@
+{% extends "base.twig.html" %}
+
+{% block extra_css %}
+
+{% endblock%}
+{% block extra_js %}
+
+{% endblock%}
+
+{% block content %}
+
+ <div class="col-md-4 col-md-offset-1">
+ 	
+ 	<div class="panel panel-default">
+ 		<div class="panel-heading text-center"><h4>{{ album.title }}</h4></div> 	 
+ 		<div class="panel-body">
+		        <img src="/resources/img/albums.png"  class="img-circle img-responsive center-block ">
+		       <span><a href="/artist/?id={{album.artist.id}}" >Artista: {{ album.artist.nombre }}</a></span>
+		       <footer>Fecha: {{ album.created | date('d-m-Y') }}</footer>
+		</div>
+    </div>
+
+</div>
+
+<div class="col-md-5 col-md-offset-1">
+	<div class="panel panel-default">
+ 		<div class="panel-heading text-center"><h4>Canciones</h4></div> 	 
+ 		<div class="panel-body">
+		      <blockquote>  
+		    		<div class="">
+						{% for song in album.songs %}
+		    				<a href="/songs/?id={{song.id}}">
+						  	 <div class="panel panel-default"> 
+							   	<div class="panel-heading text-center"><h4>{{ song.nombre }} </h4></div>
+							   	 <div class="panel-body">
+							        <span  class="glyphicon glyphicon-star center-block "></span>					        
+							     </div>
+							   </div>
+							  </a>
+						{% endfor %}							  
+					</div>		 	
+		      </blockquote>  
+		</div>
+    </div>
+</div>
+
+    <!--  <a href="add-song?id={{song.id}}">Modify</a> |<a href="add-song">Add New song</a> | <a href="song">List All</a>-->
+
+
+{% endblock %}

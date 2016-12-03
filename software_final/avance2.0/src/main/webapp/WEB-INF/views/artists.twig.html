@@ -1,0 +1,33 @@
+{% extends "base.twig.html" %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="/resources/css/theme_song_panel.css">
+{% endblock%}
+{% block extra_js %}
+
+{% endblock%}
+
+{% block content %}
+
+{% for artist in artists %}
+    
+
+        <div class="col-md-2">
+       <a href="?id={{ artist.id }}"> 
+         <div class="panel panel-default"> 
+             <div class="panel-heading text-center"><h4>{{ artist.nombre }}</h4></div>  
+             <div class="panel-body">
+                <img src="/resources/img/songs.png"  class="img-circle img-responsive center-block ">
+             </div>
+             <div class="panel-footer text-center"> 
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 
+                            <span class="glyphicon glyphicon glyphicon-plus" aria-hidden="true"></span> 
+             </div>
+           </div>
+          
+        </a>
+        </div>
+     
+{% endfor %}
+
+{% endblock %}

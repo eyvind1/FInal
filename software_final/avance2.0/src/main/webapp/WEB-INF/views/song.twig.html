@@ -1,0 +1,46 @@
+{% extends "base.twig.html" %}
+
+{% block extra_css %}
+
+{% endblock%}
+{% block extra_js %}
+
+{% endblock%}
+
+{% block content %}
+
+ <div class="col-md-4 col-md-offset-1">
+ 	
+ 	<div class="panel panel-default">
+ 		<div class="panel-heading text-center"><h4>{{ song.nombre }}</h4></div> 	 
+ 		<div class="panel-body">
+		        <img src="/resources/img/songs.png"  class="img-circle img-responsive center-block ">
+		        <span><a href="/albums/?id={{song.album.id}}"> {{ song.album.title }}</a></span> 
+		        <audio controls>
+  				<source src="/resources/media/{{ song.id }}.mp3" type="audio/mpeg">
+  				Your browser does not support the audio tag.
+				</audio>	
+		</div>
+    </div>
+
+</div>
+
+<div class="col-md-5 col-md-offset-1">
+	<div class="panel panel-default">
+ 		<div class="panel-heading text-center"><h4>Letra</h4></div> 	 
+ 		<div class="panel-body">
+		      <blockquote>  
+		        <p  class="text-uppercase"> {{ song.letra }}</p> 
+		        <footer>{{ song.fecha |date('d-m-Y')  }}</footer>
+		      </blockquote>  
+		</div>
+	
+    </div>
+
+
+</div>
+
+    <!--  <a href="add-song?id={{song.id}}">Modify</a> |<a href="add-song">Add New song</a> | <a href="song">List All</a>-->
+
+
+{% endblock %}

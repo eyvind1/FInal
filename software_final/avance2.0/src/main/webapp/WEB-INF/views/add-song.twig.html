@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>Song</title>
+</head>
+<body>
+	<form action="song" method="POST">
+		<table>
+			<tbody>
+				<tr>
+					<td>ID</td>
+					<td><input type="hidden" name="id" value="{{song.id}}" />{{song.id}}</td>
+				</tr>
+				<tr>
+					<td>NOMBRE</td>
+					<td><input type="text" name="name" value="{{song.nombre}}" /></td>
+				</tr>
+				<tr>
+					<td>letra</td>
+					<td><input type="text" name="lastName" value="{{song.letra}}" /></td>
+				</tr>
+			</tbody>
+		</table>
+		<br>
+		<input type="submit" value="Save" />
+		<input type="button" value="Cancel" onclick="history.back();" />
+	</form>
+</body>
+</html>

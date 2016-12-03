@@ -1,0 +1,39 @@
+ .panel-footer{
+  padding: 10px 15px;
+  background-color: #3e444c;
+  border-top: 1px solid rgba(0,0,0,0.6);
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;}
+  
+.panel-default>.panel-heading {
+  color: #c8c8c8;
+  background-color: #3e444c;
+  border-color: rgba(0,0,0,0.6);
+}
+
+.panel-body{
+	background-color: #222326;	
+}
+.panel span{
+	color: #d2d2d2;
+	font-size: 12pt;
+	font-weight:bold;
+}
+
+.panel-heading h4{
+	color: #222326;
+	font-size: 12pt;
+	font-weight:lighter;
+}
+
+.panel:hover { 
+    
+	  background-color: #d2d2d2;
+	  border: 1px solid transparent;
+}
+.panel .panel-body:hover {     
+	  background-color: #DF8505  !important;	  
+}
+a .panel{
+	text-decoration:none;
+}

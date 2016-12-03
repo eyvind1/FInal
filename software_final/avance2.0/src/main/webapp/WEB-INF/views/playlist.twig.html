@@ -1,0 +1,35 @@
+{% extends "base.twig.html" %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="/resources/css/theme_song_panel.css">
+
+{% endblock%}
+{% block extra_js %}
+
+{% endblock%}
+
+{% block content %}
+		
+<h1>Lista de Canciones</h1>
+
+{% for song in playlist.songs %}
+	
+<a href="/songs/?id={{song.id}}">
+	<div class="col-md-2">
+		<a href="../song/?id={{ song.id }}"> 
+	  	 <div class="panel panel-default"> 
+		   	 <div class="panel-heading text-center"><h4>{{ song.nombre }} </br>  {{ song.fecha |date('d-m-Y')  }}</h4></div> 	
+		   	 <div class="panel-body">
+
+		     </div>
+		   </div></a>
+
+	  	</div>
+	</a> 
+{% endfor %}
+	
+
+    <!--  <a href="add-song?id={{song.id}}">Modify</a> |<a href="add-song">Add New song</a> | <a href="song">List All</a>-->
+
+
+{% endblock %}
